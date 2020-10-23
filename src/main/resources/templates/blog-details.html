@@ -9,11 +9,16 @@
 <header th:insert="blocks/header :: header"></header>
 
 <div class="container mt-5">
-    <h1>Site blog</h1>
-    <div th:each="element : ${posts}" class="alert alert-info mt-2">
+
+    <div th:each="element : ${post}" class="alert alert-info mt-2">
         <h3 th:text="${element.title}"/>
-        <p th:text="${element.announce}"/>
-        <a th:href="'/blog/' + ${element.id}" class="btn btn-warning">More details</a>
+        <p th:text="${element.full_text}"/>
+        <p th:text="'Views: ' + ${element.views}"/>
+        <a th:href="'/blog/' + ${element.id} + '/edit'" class="btn btn-warning mb-2">Edit</a>
+        <form th:action="'/blog/' + ${element.id} + '/remove'" method="post">
+            <button class="btn btn-warning" type="submit">Remove</button>
+        </form>
+
     </div>
 </div>
 
