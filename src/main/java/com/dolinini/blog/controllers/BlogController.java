@@ -76,4 +76,6 @@ public class BlogController {
         postRepository.delete(post);
         return "redirect:/blog";
     }
+
+
 }
