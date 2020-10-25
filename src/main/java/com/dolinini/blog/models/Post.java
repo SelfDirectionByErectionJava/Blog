@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Post {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
     private String title, announce, full_text;

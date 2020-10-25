@@ -7,7 +7,7 @@
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
-<form action="/logout" method="post">
+<form th:action="@{/logout}" method="post">
     <input type="submit" value="Sign Out" class="btn btn-warning mb-2"/>
 </form>
 <main role="main">
